@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Editorial launch card</title>
+  <style>
+    :root { --paper: #f3f0e7; --ink: #20231e; --muted: #686c61; --accent: #d5f86b; }
+    body { box-sizing: border-box; background: var(--paper); color: var(--ink); font-family: Studio; padding: 46px 56px; }
+    .masthead { display: flex; justify-content: space-between; align-items: center; height: 32px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; }
+    .edition { font-size: 15px; letter-spacing: 2px; color: var(--muted); }
+    .rule { height: 1px; background: #c8cabc; margin-top: 25px; margin-bottom: 34px; }
+    .main { display: flex; flex: 1; gap: 42px; }
+    .copy { display: flex; flex-direction: column; justify-content: center; width: 59%; }
+    .eyebrow { color: var(--muted); font-size: 16px; letter-spacing: 2px; margin-bottom: 18px; }
+    h1 { font-size: 76px; font-weight: 700; letter-spacing: -4px; line-height: 0.99; margin: 0; }
+    .deck { font-size: 23px; line-height: 1.35; color: var(--muted); max-width: 470px; margin-top: 24px; }
+    .art { display: flex; position: relative; flex: 1; border-radius: 20px; background: var(--ink); overflow: hidden; }
+    .orbit { position: absolute; border: 1px solid #50594a; border-radius: 50%; width: 350px; height: 350px; top: -145px; right: -135px; }
+    .orbit-inner { position: absolute; border: 1px solid #50594a; border-radius: 50%; width: 260px; height: 260px; top: -100px; right: -90px; }
+    .bars { display: flex; align-items: flex-end; gap: 16px; position: absolute; left: 34px; right: 34px; bottom: 44px; height: 215px; }
+    .bar { flex: 1; border-radius: 8px 8px 0 0; background: #5b6850; }
+    .art-label { position: absolute; left: 34px; top: 32px; color: var(--accent); font-size: 14px; letter-spacing: 2px; }
+    .footer { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; font-size: 15px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="masthead">
+    <div class="brand">
+      <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M0 0H11V11H0ZM15 0H26V11H15ZM0 15H11V26H0ZM15 15H26V26H15Z" fill="#20231e"/></svg>
+      FIELDNOTES
+    </div>
+    <div class="edition">PRODUCT JOURNAL / 001</div>
+  </div>
+  <div class="rule"></div>
+  <div class="main">
+    <div class="copy">
+      <div class="eyebrow">A CLEARER WAY TO WORK</div>
+      <h1>Less noise.<br>More signal.</h1>
+      <div class="deck">Make room for the work<br>that moves you forward.</div>
+    </div>
+    <div class="art">
+      <div class="orbit"></div><div class="orbit-inner"></div>
+      <div class="art-label">IDEAS INTO MOTION</div>
+      <div class="bars">
+        <div class="bar" style="height: 28%"></div>
+        <div class="bar" style="height: 44%"></div>
+        <div class="bar" style="height: 65%"></div>
+        <div class="bar" style="height: 100%; background: #d5f86b"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>Built for focus.</span><span>AN ILLUSTRATION, NOT MEASURED DATA</span></div>
+</body>
+</html>

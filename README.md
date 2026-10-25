@@ -22,4 +22,5 @@ See the [Skills CLI documentation](https://github.com/vercel-labs/skills) for mo
 
 ## Available skills
 
-- [Easyread](skills/easyread): Write, revise, or review explanations so people can understand them on a first reading.
+- [Easyread](skills/easyread/SKILL.md): Write, revise, or review explanations so people can understand them on a first reading.
+- [Satori](skills/satori/SKILL.md): Design polished graphics in HTML/CSS and render SVG or PNG files with a TypeScript CLI.
