@@ -51,7 +51,7 @@ Keep all rules, and do not invent API behavior. Aim for 140–200 words.
 ```
 
 **Output without Easyread**
-
+```text
 To retry POST /jobs safely, keep the original request body and the Idempotency-Key header value available for the entire operation. Every retry must use that same key and body.
 
 Retry only when the response status is HTTP 429 or HTTP 503. Allow at most three retries after the initial request, for a maximum of four POST attempts. Do not retry any other response status.
@@ -63,9 +63,11 @@ Before each permitted retry, check the response for Retry-After. If it is presen
 3. Third retry: 4 seconds.
 
 Handle timeouts separately from HTTP responses. A timeout leaves the request result unknown, so check GET /jobs/by-key/{key} before deciding whether to send another POST. Do not assume that the timeout means the job was not created. The lookup’s response behavior is not specified here, so do not infer a retry decision from an undocumented response.
+```
 
 **Output with Easyread**
 
+```text
 Retry `POST /jobs` only after an HTTP `429` or `503` response. You can retry at most three times after the initial request, for a maximum of four POST attempts. Do not retry other response statuses.
 
 Keep the `Idempotency-Key` value and request body from the initial request. Reuse both on every retry.
@@ -78,66 +80,8 @@ Before each retry, choose the delay:
 The fallback delay depends on which retry you are about to send. For example, if the second retry has no `Retry-After` value, wait 2 seconds before sending it.
 
 If a POST request times out, its result is unknown. Check `GET /jobs/by-key/{key}` before deciding whether to send another POST, using the same key in the lookup path. The lookup’s response behavior is not specified here, so these rules alone do not tell you how to make that decision.
-
-**What to notice:** The Easyread output leads with the retry condition and limit. It groups the two delay conditions together and adds a concrete example. Both outputs preserve the retry limit, key reuse, and uncertainty after a timeout. The Easyread output uses more words to explain the fallback delay.
-
-### Storywriting
-
-Easyread does not require plain prose for fiction. This example shows how an output can retain a requested literary voice when the skill is applied.
-
-**Input to both generations**
-
-```text
-Write a 140–180 word opening scene for adult readers in a quiet, lyrical
-voice. A lighthouse keeper named Mara hears a knock during a storm. Her
-brother disappeared at sea seven years ago. Outside the door is his red
-scarf, dry despite the rain.
-
-Do not reveal who knocked or explain the scarf. Use close third person,
-concrete sensory details, and restrained emotion.
 ```
-
-**Output without Easyread**
-
-The knock came between two blows of wind.
-
-Mara lifted her head from the ledger. Across the glass, rain ran sideways, silver in the sweep of the lamp. She held her pen above the page until a drop of ink swelled at its point and fell beside the date.
-
-No boat could have landed below the tower tonight. She listened anyway.
-
-The stove ticked behind her. In the stairwell, the wind worried a loose pane with the small, persistent sound of teeth against a cup.
-
-She set down the pen.
-
-Seven years had worn her brother’s voice thin in her memory. Some days she could summon only the way he cleared his throat before saying her name.
-
-At the door, cold water had pooled beneath the sill. Mara drew back the bolt and braced her shoulder against the wood.
-
-His red scarf lay on the step.
-
-The fringe stirred in the rain. She crouched and touched the wool.
-
-Dry.
-
-**Output with Easyread**
-
-Mara heard the knock as she trimmed the lamp.
-
-Her hand stopped above the wick. Rain struck the lighthouse windows, and somewhere below, a shutter banged against the stone. She waited for the sound to come again. Through the soles of her boots she felt the sea breaking against the tower’s foundations.
-
-She put the scissors down.
-
-The stairs were cold beneath her palm. At the foot of them, a thread of water ran from the door toward the drain. She stepped across it and lifted the latch.
-
-Her brother’s red scarf lay outside.
-
-For seven years, since he disappeared at sea, she had remembered it wet: dark against his coat, its ends tucked beneath his collar. Here it lay loose on the doorstep, bright as the wool their mother had unwound beside the kitchen fire.
-
-Rain splashed the stone around it.
-
-Mara bent and pressed two fingers into a fold. The wool was dry, even at the edges.
-
-**What to notice:** Both outputs use imagery, varied sentence lengths, and an unresolved ending. The Easyread output introduces Mara through her work and explicitly states that her brother disappeared at sea; the baseline evokes his absence through a memory of his voice. These are different creative choices, not evidence that one scene is more readable. The skill leaves room for literary language.
+**What to notice:** The Easyread output leads with the retry condition and limit. It groups the two delay conditions together and adds a concrete example. Both outputs preserve the retry limit, key reuse, and uncertainty after a timeout. The Easyread output uses more words to explain the fallback delay.
 
 ### Professional emails
 
