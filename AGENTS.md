@@ -10,9 +10,13 @@ This repository is my personal collection of skills that I've created and use da
 - In the body of `SKILL.md`, state the skill's scope, give clear instructions, and explain how to check the result. Include limits or exceptions when they affect how the skill should be used.
 - Keep the instructions needed for normal use in `SKILL.md`. Put longer examples or background material in `references/` and link to them from `SKILL.md`.
 - Add `scripts/` for reusable executable helpers and `assets/` for supporting files only when the skill needs them. Do not create empty placeholder folders.
+  - Do not create scripts unless the user explicitly asks you to.
+  - Listen to the user when the tell you what type of script it should be. Prefer shell and system tools over all.
+  - If you do write a script, follow the guide in the [script doc](docs/scripts.md).
 - Use relative links for files within the repository. Check that every linked file exists.
 - Add a skill-level `README.md` when users need an overview, usage examples, or background beyond the agent instructions. Keep it consistent with `SKILL.md`.
   - `README.md` should include a single line example for how to add the specific skill to your agent. See the example in [easyread](skills/easyread/README.md).
+  - Always use the easyread skill to write the README to make it easy for humans to understand.
 
 Example:
 
