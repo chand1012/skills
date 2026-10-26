@@ -25,3 +25,4 @@ See the [Skills CLI documentation](https://github.com/vercel-labs/skills) for mo
 - [Easyread](skills/easyread/SKILL.md): Write, revise, or review explanations so people can understand them on a first reading.
 - [Meme](skills/meme/SKILL.md): Create comics, captioned images, and reaction memes from ideas or image templates.
 - [Satori](skills/satori/SKILL.md): Design polished graphics in HTML/CSS and render SVG or PNG files with a TypeScript CLI.
+- [Summary](skills/summary/SKILL.md): Summarize material or topics at three levels of detail, preserving the reasoning and qualifications needed to discuss them accurately.
